@@ -196,7 +196,9 @@ public class EmployeeStreamDemo {
 	public static void method11() {
 		System.out.println("Query 11 : What is the average salary of male and female employees?");
 		Map<String, Double> avgSalaryOfMaleAndFemaleEmployees=
-				employeeList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingDouble(Employee::getSalary)));
+				employeeList
+					.stream()
+					.collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingDouble(Employee::getSalary)));
 				         
 				System.out.println(avgSalaryOfMaleAndFemaleEmployees);
 	}
