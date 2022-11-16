@@ -111,14 +111,18 @@ public class EmployeeStreamDemo {
 
 	public static void method5() {
 		System.out.println("Query 5 : Get the names of all employees who have joined after 2015?");
-		employeeList.stream().filter(e -> e.getYearOfJoining() > 2015).map(Employee::getName)
-				.forEach(System.out::println);
+		employeeList
+			.stream()
+			.filter(e -> e.getYearOfJoining() > 2015)
+			.map(Employee::getName)
+			.forEach(System.out::println);
 	}
 
 	public static void method6() {
 		System.out.println("Query 6 : Count the number of employees in each department?");
-		Map<String, Long> employeeCountByDepartment = employeeList.stream()
-				.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
+		Map<String, Long> employeeCountByDepartment = 
+				employeeList.stream()
+							.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
 
 		Set<Entry<String, Long>> entrySet = employeeCountByDepartment.entrySet();
 
@@ -163,7 +167,10 @@ public class EmployeeStreamDemo {
 	public static void method9() {
 		System.out.println("Query 9 : Who has the most working experience in the organization?");
 		Optional<Employee> seniorMostEmployeeWrapper=
-				employeeList.stream().sorted(Comparator.comparingInt(Employee::getYearOfJoining)).findFirst();
+				employeeList
+					.stream()
+					.sorted(Comparator.comparingInt(Employee::getYearOfJoining))
+					.findFirst();
 				         
 				Employee seniorMostEmployee = seniorMostEmployeeWrapper.get();
 				         
