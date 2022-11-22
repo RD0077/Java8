@@ -6,6 +6,7 @@ public class StringPanagram {
 		String s= "the quick brown fox jumps over the lazy dog";
 		//String s="abcdefghijklmnoqrstuvwxyzzzzz";
 		System.out.println(isPanagram(s));
+		System.out.println(isPanagram(s.toLowerCase()));
 	}
 
 	private static boolean isPanagram(String s) {
