@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 public class FirstNonRepeatingChar {
 
 	public static void main(String[] args) {
-		char c= getFirstNonRepetingChar("asdkjklajsdajfhsjkdfjh");
+		char c= getFirstNonRepetingChar("aszdkjklajsdajfhsjkdfjh");
 		System.out.println(c);
 	}
 
@@ -18,7 +18,7 @@ public class FirstNonRepeatingChar {
 		}
 		for(Entry<Character, Integer> entry:countMap.entrySet()) {
 			if(entry.getValue()==1) {
-				entry.getKey();
+			return	entry.getKey();
 			}
 		}
 		throw new RuntimeException("Did't find non reapeating character");
